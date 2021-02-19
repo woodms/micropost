@@ -1,0 +1,9 @@
+.delete {
+  color: red;
+}
+
+.btn-secondary {
+  background-color: #cdfbdd;
+  border-color: #cdfbdd;
+  color: #000;
+}
