@@ -78,7 +78,12 @@ class UI {
     this.changeFormState('edit');
   }
 
-  // Change the form state
+  // Clear ID hidden field
+  clearIdInput() {
+    this.idInput.value = '';
+  }
+
+  // Change the form state based on type
   changeFormState(type) {
     if(type === 'edit') {
       this.postSubmit.textContent = 'Update Post';
@@ -96,7 +101,19 @@ class UI {
       // Insert cancel button 
       cardForm.insertBefore(button, formEnd);
     } else {
-
+      // Change back to add state
+      
+      // Change main button to post
+      this.postSubmit.textContent = 'Post It';
+      this.postSubmit.className = 'post-submit btn btn-primary btn-block';
+      // Remove cancel button if present
+      if(document.querySelector('.post-cancel')) {
+        document.querySelector('.post-cancel').remove();
+      }
+      // Clear ID from hidden id field
+      this.clearIdInput();
+      // Clear text
+      this.clearFields();
     }
   }
 }
